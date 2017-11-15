@@ -17,6 +17,7 @@ namespace BackGroundTask.Controllers
 
         public void Stop(bool immediate)
         {
+            Debug.WriteLine($"[WebFramework_Debug]: Trying to Stop() {Thread.CurrentThread.ManagedThreadId}");
             lock (_lock)
             {
                 _shuttingDown = true;
@@ -32,7 +33,6 @@ namespace BackGroundTask.Controllers
                 {
                     return;
                 }
-                Debug.WriteLine($"[WebFramework_Debug]: 2DWB: {Thread.CurrentThread.ManagedThreadId}");
                 work();
             }
         }

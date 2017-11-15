@@ -180,6 +180,7 @@ namespace BackGroundTask.Controllers
         public JsonResult Job2()
         {
             JObject returnResult = new JObject();
+            SampleAspNetTimer.Start();
 
             try
             {
@@ -212,9 +213,9 @@ namespace BackGroundTask.Controllers
                         taskCategoriesData = new List<string> { "A", "B", "C" };
                     });
 
-                    returnResult.Add(new JProperty("GetOverDueTasks2", JToken.FromObject(overDueTasks)));
-                    returnResult.Add(new JProperty("GetTasksByDueTime2", milestoneChart));
-                    returnResult.Add(new JProperty("GetTaskModules2", JToken.FromObject(taskCategoriesData)));
+                    // returnResult.Add(new JProperty("GetOverDueTasks2", JToken.FromObject(overDueTasks)));
+                    // returnResult.Add(new JProperty("GetTasksByDueTime2", milestoneChart));
+                    // returnResult.Add(new JProperty("GetTaskModules2", JToken.FromObject(taskCategoriesData)));
                 });
             }
             catch (Exception ex)
